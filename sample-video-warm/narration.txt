@@ -1,0 +1,71 @@
+When people hear AI architecture, they usually imagine a complicated diagram full of words like LLM, RAG, agents, tools, memory, MCP, vector database, evals, and orchestration.
+
+But if we simplify everything, modern AI architecture is built around two core ideas. Reasoning, and acting.
+
+Reasoning means the AI decides what should happen next. Acting means the AI actually does something in the real world. It searches data, calls an API, reads a file, writes code, sends a request, or uses a tool.
+
+And this is the main difference between a simple chatbot and an AI agent. A chatbot mostly responds. An agent reasons, acts, observes the result, and then reasons again.
+
+In this video, let's break down AI architecture using only these two ideas. Reasoning, and acting.
+
+Here is the simplest mental model. Reasoning is the brain. Acting is the hands. Observation is the feedback.
+
+Imagine you ask an AI: analyze last week's sales data and give me three improvement suggestions.
+
+A basic chatbot might give you generic advice like: improve marketing, optimize pricing, talk to customers. That sounds useful, but it is not actually based on your real data.
+
+An AI agent should behave differently. First, it reasons. Where is the sales data? What date range does the user mean? Which metrics matter? Do I need to query a database? Do I need to compare this week with the previous week?
+
+Then it acts. It calls a database tool. It fetches the sales report. It reads the numbers. It compares trends. Then it creates a final answer.
+
+That full cycle is the foundation of AI agent architecture.
+
+The first major layer is the reasoning layer. This is where the AI tries to understand the user's goal. It asks internally: what is the task? What information do I already have? What information is missing? Can I answer directly, or do I need a tool? Is this a safe action?
+
+Good AI systems do not jump straight to the final answer. They first build a plan.
+
+Reasoning turns a vague request into a structured plan. But reasoning is not magic. In production systems, reasoning is guided by system prompts, developer instructions, examples, policies, and schemas. The better the structure, the more reliable the AI becomes.
+
+The second major layer is the acting layer. Acting means the AI can use tools.
+
+Without tools, an AI model is limited to text generation. With tools, it can interact with external systems. Search. Database queries. File reading. Code execution. Calendars. Email. CRMs. Payment systems. Internal APIs.
+
+The model does not magically know your private company data. It does not automatically know your latest codebase. It does not know today's sales report unless the system gives it access. That is why tools matter.
+
+Think of tools as the hands of the AI system. The model decides: I need the sales report. The system calls a tool. The tool returns data. Then the model reads the result and reasons again.
+
+This is where AI becomes more than a text generator. It becomes a task-solving system.
+
+Now let's connect reasoning and acting into one loop. A typical AI agent loop looks like this. Think. Act. Observe. Think. Answer.
+
+Step one. The user gives a goal. For example: review this landing page and suggest improvements.
+
+Step two. The AI thinks. I need the landing page copy, analytics data, and maybe user feedback.
+
+Step three. The AI acts. It reads the page, fetches analytics, and searches feedback notes.
+
+Step four. The AI observes. The bounce rate is high, the headline is unclear, and the call to action is too low on the page.
+
+Step five. The AI thinks again. It connects the evidence and identifies the main problem. This is not only a design issue. It is also a messaging issue.
+
+Step six. The AI answers, with suggestions based on actual data.
+
+A chatbot gives an answer. An agent follows a process.
+
+But there is one more important part of AI architecture. Safety.
+
+If an AI can act, then we need control. Because not every action has the same risk. Reading a document is low risk. Writing to a database is higher. Sending an email is even higher. Deleting data, deploying code, or making a payment can be very risky.
+
+A good AI architecture separates actions into risk levels. For low risk actions, the system may allow the AI to proceed automatically. For high risk actions, the system should ask for human approval.
+
+Reasoning without safety can create confident mistakes. Acting without control can create real damage. Production AI agents need permissions, logging, approval flows, and clear tool boundaries.
+
+So if you want to understand AI architecture, remember this simple model. Reasoning is deciding. Acting is doing. Observation is learning from the result.
+
+The AI receives a goal. It reasons about the next step. It uses tools. It observes what happened. Then it reasons again. Finally, it answers or completes the task.
+
+This is why modern AI systems are moving beyond chatbots. They are becoming research assistants, coding agents, sales copilots, hiring assistants, healthcare assistants, and operations agents.
+
+Different products. Same foundation. Reasoning, plus acting.
+
+If you understand this loop, you can understand almost any AI agent architecture.

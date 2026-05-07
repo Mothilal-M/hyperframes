@@ -1,0 +1,632 @@
+[
+  {
+    "text": "When people hear AI architecture, they usually imagine a complicated diagram full of words like LLM, RAG, agents, tools, memory, MCP, vector database, evals, and orchestration.",
+    "start": 0.1,
+    "end": 11.812
+  },
+  {
+    "text": "But if we simplify everything, modern AI architecture is built around two core ideas.",
+    "start": 11.762,
+    "end": 17.363
+  },
+  {
+    "text": "Reasoning, and acting.",
+    "start": 17.363,
+    "end": 19.562
+  },
+  {
+    "text": "Reasoning means the AI decides what should happen next.",
+    "start": 19.562,
+    "end": 23.325
+  },
+  {
+    "text": "Acting means the AI actually does something in the real world.",
+    "start": 23.325,
+    "end": 27.3
+  },
+  {
+    "text": "It searches data, calls an API, reads a file, writes code, sends a request, or uses a tool.",
+    "start": 27.3,
+    "end": 33.837
+  },
+  {
+    "text": "And this is the main difference between a simple chatbot and an AI agent.",
+    "start": 33.837,
+    "end": 38.525
+  },
+  {
+    "text": "A chatbot mostly responds.",
+    "start": 38.525,
+    "end": 41.2
+  },
+  {
+    "text": "An agent reasons, acts, observes the result, and then reasons again.",
+    "start": 41.2,
+    "end": 46.038
+  },
+  {
+    "text": "In this video, let's break down AI architecture using only these two ideas.",
+    "start": 46.038,
+    "end": 51.2
+  },
+  {
+    "text": "Reasoning, and acting.",
+    "start": 51.2,
+    "end": 53.4
+  },
+  {
+    "text": "Here is the simplest mental model.",
+    "start": 53.4,
+    "end": 56.188
+  },
+  {
+    "text": "Reasoning is the brain.",
+    "start": 56.188,
+    "end": 58.362
+  },
+  {
+    "text": "Acting is the hands.",
+    "start": 58.362,
+    "end": 60.575
+  },
+  {
+    "text": "Observation is the feedback.",
+    "start": 60.575,
+    "end": 63.212
+  },
+  {
+    "text": "Imagine you ask an AI: analyze last week's sales data and give me three improvement suggestions.",
+    "start": 63.212,
+    "end": 69.2
+  },
+  {
+    "text": "A basic chatbot might give you generic advice like: improve marketing, optimize pricing, talk to customers.",
+    "start": 69.2,
+    "end": 76.112
+  },
+  {
+    "text": "That sounds useful, but it is not actually based on your real data.",
+    "start": 76.112,
+    "end": 80.525
+  },
+  {
+    "text": "An AI agent should behave differently.",
+    "start": 80.525,
+    "end": 83.65
+  },
+  {
+    "text": "First, it reasons.",
+    "start": 83.65,
+    "end": 85.975
+  },
+  {
+    "text": "Where is the sales data?",
+    "start": 85.975,
+    "end": 88.263
+  },
+  {
+    "text": "What date range does the user mean?",
+    "start": 88.263,
+    "end": 91.075
+  },
+  {
+    "text": "Which metrics matter?",
+    "start": 91.075,
+    "end": 93.175
+  },
+  {
+    "text": "Do I need to query a database?",
+    "start": 93.175,
+    "end": 95.862
+  },
+  {
+    "text": "Do I need to compare this week with the previous week?",
+    "start": 95.862,
+    "end": 99.287
+  },
+  {
+    "text": "Then it acts.",
+    "start": 99.287,
+    "end": 101.088
+  },
+  {
+    "text": "It calls a database tool.",
+    "start": 101.088,
+    "end": 103.513
+  },
+  {
+    "text": "It fetches the sales report.",
+    "start": 103.513,
+    "end": 106.088
+  },
+  {
+    "text": "It reads the numbers.",
+    "start": 106.088,
+    "end": 108.237
+  },
+  {
+    "text": "It compares trends.",
+    "start": 108.237,
+    "end": 110.412
+  },
+  {
+    "text": "Then it creates a final answer.",
+    "start": 110.412,
+    "end": 113.088
+  },
+  {
+    "text": "That full cycle is the foundation of AI agent architecture.",
+    "start": 113.088,
+    "end": 117.338
+  },
+  {
+    "text": "The first major layer is the reasoning layer.",
+    "start": 117.338,
+    "end": 120.475
+  },
+  {
+    "text": "This is where the AI tries to understand the user's goal.",
+    "start": 120.475,
+    "end": 124.138
+  },
+  {
+    "text": "It asks internally: what is the task?",
+    "start": 124.138,
+    "end": 127.412
+  },
+  {
+    "text": "What information do I already have?",
+    "start": 127.412,
+    "end": 130.325
+  },
+  {
+    "text": "What information is missing?",
+    "start": 130.325,
+    "end": 132.725
+  },
+  {
+    "text": "Can I answer directly, or do I need a tool?",
+    "start": 132.725,
+    "end": 136.062
+  },
+  {
+    "text": "Is this a safe action?",
+    "start": 136.062,
+    "end": 138.25
+  },
+  {
+    "text": "Good AI systems do not jump straight to the final answer.",
+    "start": 138.25,
+    "end": 142.075
+  },
+  {
+    "text": "They first build a plan.",
+    "start": 142.075,
+    "end": 144.412
+  },
+  {
+    "text": "Reasoning turns a vague request into a structured plan.",
+    "start": 144.412,
+    "end": 148.2
+  },
+  {
+    "text": "But reasoning is not magic.",
+    "start": 148.2,
+    "end": 150.637
+  },
+  {
+    "text": "In production systems, reasoning is guided by system prompts, developer instructions, examples, policies, and schemas.",
+    "start": 150.637,
+    "end": 158.463
+  },
+  {
+    "text": "The better the structure, the more reliable the AI becomes.",
+    "start": 158.463,
+    "end": 162.512
+  },
+  {
+    "text": "The second major layer is the acting layer.",
+    "start": 162.512,
+    "end": 165.725
+  },
+  {
+    "text": "Acting means the AI can use tools.",
+    "start": 165.725,
+    "end": 168.738
+  },
+  {
+    "text": "Without tools, an AI model is limited to text generation.",
+    "start": 168.738,
+    "end": 173.162
+  },
+  {
+    "text": "With tools, it can interact with external systems.",
+    "start": 173.162,
+    "end": 176.988
+  },
+  {
+    "text": "Search.",
+    "start": 176.988,
+    "end": 178.488
+  },
+  {
+    "text": "Database queries.",
+    "start": 178.488,
+    "end": 180.512
+  },
+  {
+    "text": "File reading.",
+    "start": 180.512,
+    "end": 182.287
+  },
+  {
+    "text": "Code execution.",
+    "start": 182.287,
+    "end": 184.325
+  },
+  {
+    "text": "Calendars.",
+    "start": 184.325,
+    "end": 186.025
+  },
+  {
+    "text": "Email.",
+    "start": 186.025,
+    "end": 187.575
+  },
+  {
+    "text": "CRMs. Payment systems.",
+    "start": 187.575,
+    "end": 190.3
+  },
+  {
+    "text": "Internal APIs.",
+    "start": 190.3,
+    "end": 192.537
+  },
+  {
+    "text": "The model does not magically know your private company data.",
+    "start": 192.537,
+    "end": 196.463
+  },
+  {
+    "text": "It does not automatically know your latest codebase.",
+    "start": 196.463,
+    "end": 200.2
+  },
+  {
+    "text": "It does not know today's sales report unless the system gives it access.",
+    "start": 200.2,
+    "end": 204.662
+  },
+  {
+    "text": "That is why tools matter.",
+    "start": 204.662,
+    "end": 206.988
+  },
+  {
+    "text": "Think of tools as the hands of the AI system.",
+    "start": 206.988,
+    "end": 210.325
+  },
+  {
+    "text": "The model decides: I need the sales report.",
+    "start": 210.325,
+    "end": 213.675
+  },
+  {
+    "text": "The system calls a tool.",
+    "start": 213.675,
+    "end": 215.95
+  },
+  {
+    "text": "The tool returns data.",
+    "start": 215.95,
+    "end": 218.275
+  },
+  {
+    "text": "Then the model reads the result and reasons again.",
+    "start": 218.275,
+    "end": 221.675
+  },
+  {
+    "text": "This is where AI becomes more than a text generator.",
+    "start": 221.675,
+    "end": 225.312
+  },
+  {
+    "text": "It becomes a task-solving system.",
+    "start": 225.312,
+    "end": 228.213
+  },
+  {
+    "text": "Now let's connect reasoning and acting into one loop.",
+    "start": 228.213,
+    "end": 231.8
+  },
+  {
+    "text": "A typical AI agent loop looks like this.",
+    "start": 231.8,
+    "end": 235.05
+  },
+  {
+    "text": "Think.",
+    "start": 235.05,
+    "end": 236.525
+  },
+  {
+    "text": "Act.",
+    "start": 236.525,
+    "end": 237.963
+  },
+  {
+    "text": "Observe.",
+    "start": 237.963,
+    "end": 239.537
+  },
+  {
+    "text": "Think.",
+    "start": 239.537,
+    "end": 241.012
+  },
+  {
+    "text": "Answer.",
+    "start": 241.012,
+    "end": 242.588
+  },
+  {
+    "text": "Step one.",
+    "start": 242.588,
+    "end": 244.3
+  },
+  {
+    "text": "The user gives a goal.",
+    "start": 244.3,
+    "end": 246.525
+  },
+  {
+    "text": "For example: review this landing page and suggest improvements.",
+    "start": 246.525,
+    "end": 251.088
+  },
+  {
+    "text": "Step two.",
+    "start": 251.088,
+    "end": 252.775
+  },
+  {
+    "text": "The AI thinks.",
+    "start": 252.775,
+    "end": 254.7
+  },
+  {
+    "text": "I need the landing page copy, analytics data, and maybe user feedback.",
+    "start": 254.7,
+    "end": 259.738
+  },
+  {
+    "text": "Step three.",
+    "start": 259.738,
+    "end": 261.525
+  },
+  {
+    "text": "The AI acts.",
+    "start": 261.525,
+    "end": 263.462
+  },
+  {
+    "text": "It reads the page, fetches analytics, and searches feedback notes.",
+    "start": 263.462,
+    "end": 267.962
+  },
+  {
+    "text": "Step four.",
+    "start": 267.962,
+    "end": 269.775
+  },
+  {
+    "text": "The AI observes.",
+    "start": 269.775,
+    "end": 271.975
+  },
+  {
+    "text": "The bounce rate is high, the headline is unclear, and the call to action is too low on the page.",
+    "start": 271.975,
+    "end": 277.738
+  },
+  {
+    "text": "Step five.",
+    "start": 277.738,
+    "end": 279.512
+  },
+  {
+    "text": "The AI thinks again.",
+    "start": 279.512,
+    "end": 281.663
+  },
+  {
+    "text": "It connects the evidence and identifies the main problem.",
+    "start": 281.663,
+    "end": 285.45
+  },
+  {
+    "text": "This is not only a design issue.",
+    "start": 285.45,
+    "end": 288.125
+  },
+  {
+    "text": "It is also a messaging issue.",
+    "start": 288.125,
+    "end": 290.637
+  },
+  {
+    "text": "Step six.",
+    "start": 290.637,
+    "end": 292.5
+  },
+  {
+    "text": "The AI answers, with suggestions based on actual data.",
+    "start": 292.5,
+    "end": 296.55
+  },
+  {
+    "text": "A chatbot gives an answer.",
+    "start": 296.55,
+    "end": 299.012
+  },
+  {
+    "text": "An agent follows a process.",
+    "start": 299.012,
+    "end": 301.6
+  },
+  {
+    "text": "But there is one more important part of AI architecture.",
+    "start": 301.6,
+    "end": 305.438
+  },
+  {
+    "text": "Safety.",
+    "start": 305.438,
+    "end": 307.0
+  },
+  {
+    "text": "If an AI can act, then we need control.",
+    "start": 307.156,
+    "end": 310.456
+  },
+  {
+    "text": "Because not every action has the same risk.",
+    "start": 310.406,
+    "end": 313.581
+  },
+  {
+    "text": "Reading a document is low risk.",
+    "start": 313.581,
+    "end": 316.394
+  },
+  {
+    "text": "Writing to a database is higher.",
+    "start": 316.394,
+    "end": 319.068
+  },
+  {
+    "text": "Sending an email is even higher.",
+    "start": 319.068,
+    "end": 321.868
+  },
+  {
+    "text": "Deleting data, deploying code, or making a payment can be very risky.",
+    "start": 321.868,
+    "end": 326.818
+  },
+  {
+    "text": "A good AI architecture separates actions into risk levels.",
+    "start": 326.818,
+    "end": 330.969
+  },
+  {
+    "text": "For low risk actions, the system may allow the AI to proceed automatically.",
+    "start": 330.969,
+    "end": 336.168
+  },
+  {
+    "text": "For high risk actions, the system should ask for human approval.",
+    "start": 336.168,
+    "end": 340.644
+  },
+  {
+    "text": "Reasoning without safety can create confident mistakes.",
+    "start": 340.644,
+    "end": 344.431
+  },
+  {
+    "text": "Acting without control can create real damage.",
+    "start": 344.431,
+    "end": 347.781
+  },
+  {
+    "text": "Production AI agents need permissions, logging, approval flows, and clear tool boundaries.",
+    "start": 347.781,
+    "end": 353.618
+  },
+  {
+    "text": "So if you want to understand AI architecture, remember this simple model.",
+    "start": 353.618,
+    "end": 358.556
+  },
+  {
+    "text": "Reasoning is deciding.",
+    "start": 358.556,
+    "end": 360.743
+  },
+  {
+    "text": "Acting is doing.",
+    "start": 360.743,
+    "end": 362.681
+  },
+  {
+    "text": "Observation is learning from the result.",
+    "start": 362.681,
+    "end": 365.793
+  },
+  {
+    "text": "The AI receives a goal.",
+    "start": 365.793,
+    "end": 368.206
+  },
+  {
+    "text": "It reasons about the next step.",
+    "start": 368.206,
+    "end": 370.731
+  },
+  {
+    "text": "It uses tools.",
+    "start": 370.731,
+    "end": 372.743
+  },
+  {
+    "text": "It observes what happened.",
+    "start": 372.743,
+    "end": 375.081
+  },
+  {
+    "text": "Then it reasons again.",
+    "start": 375.081,
+    "end": 377.243
+  },
+  {
+    "text": "Finally, it answers or completes the task.",
+    "start": 377.243,
+    "end": 380.743
+  },
+  {
+    "text": "This is why modern AI systems are moving beyond chatbots.",
+    "start": 380.743,
+    "end": 384.894
+  },
+  {
+    "text": "They are becoming research assistants, coding agents, sales copilots, hiring assistants, healthcare assistants, and operations agents.",
+    "start": 384.894,
+    "end": 392.831
+  },
+  {
+    "text": "Different products.",
+    "start": 392.831,
+    "end": 394.769
+  },
+  {
+    "text": "Same foundation.",
+    "start": 394.769,
+    "end": 396.769
+  },
+  {
+    "text": "Reasoning, plus acting.",
+    "start": 396.769,
+    "end": 399.131
+  },
+  {
+    "text": "If you understand this loop, you can understand almost any AI agent architecture.",
+    "start": 399.131,
+    "end": 404.531
+  }
+]
